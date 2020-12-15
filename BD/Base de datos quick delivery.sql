@@ -1,3 +1,4 @@
+Drop database if exists QuickDeliveryBD;
 create database QuickDeliveryBD;
 use QuickDeliveryBD;
 
@@ -16,6 +17,7 @@ Create Table Productos
 (
 idProducto int primary key auto_increment not null,
 nombreP varchar (50) not null,
+cantidadProducto int,
 precioP decimal not null
 );
 
@@ -50,6 +52,7 @@ Create Table Compras
 idCompra int not null primary key auto_increment,
 idVenta int not null,
 idCliente int not null,
+cantidadComprada int not null,
 foreign key (idCliente) references Clientes (idCliente),
 foreign key (idVenta) references Ventas (idVenta)
 );
@@ -61,6 +64,17 @@ idVenta int not null,
 idCliente int not null,
 foreign key (idVenta) references Ventas (idVenta),
 foreign key (idCliente) references Clientes (idCliente)
+);
+
+create table Facturas 
+(
+idFactura int not null primary key auto_increment,
+idEnvio int not null,
+idCliente int not null,
+idVenta int not null,
+foreign key (idEnvio) references Envios (idEnvio),
+foreign key (idCliente) references Clientes (idCliente),
+foreign key (idVenta) references Ventas (idVenta)
 );
 -- si sale un error, descomentar lo siguiente y ejecutarlo
 -- alter table Clientes Add foreign key (idCompra) references Compras (idCompra)
