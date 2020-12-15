@@ -16,6 +16,7 @@ public class FrmLoguin extends javax.swing.JFrame {
      */
     public FrmLoguin() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
