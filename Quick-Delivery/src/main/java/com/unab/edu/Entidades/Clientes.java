@@ -9,6 +9,10 @@ package com.unab.edu.Entidades;
  *
  * @author PC
  */
-public class Clientes {
+public class Clientes extends Usuarios{
+    
+    protected int idCliente;
+    protected int idUsuario;
+    protected int idCompra;
     
 }

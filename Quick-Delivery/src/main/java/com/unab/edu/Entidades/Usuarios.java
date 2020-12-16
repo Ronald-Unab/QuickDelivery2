@@ -11,4 +11,12 @@ package com.unab.edu.Entidades;
  */
 public class Usuarios {
     
+     protected int idUsuario;
+     protected String nombreU;
+     protected String apellidoU;
+     protected String correoU;
+     protected String contraU;
+     protected String telefonoU;
+     protected String direccionU;
+    
 }

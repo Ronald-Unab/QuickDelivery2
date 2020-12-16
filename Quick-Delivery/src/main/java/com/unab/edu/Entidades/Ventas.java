@@ -5,10 +5,18 @@
  */
 package com.unab.edu.Entidades;
 
+import java.util.Date;
+
 /**
  *
  * @author PC
  */
-public class Ventas {
+public class Ventas extends Productos {
     
+    protected int idVenta;
+    protected int idVendedor;
+    protected int idProducto;
+    protected double totalV;
+    protected double comisionesEnvio;
+    protected Date fechaVenta;
 }

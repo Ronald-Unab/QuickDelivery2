@@ -11,4 +11,8 @@ package com.unab.edu.Entidades;
  */
 public class Compras {
     
+    protected int idCompras;
+    protected int idVenta;
+    protected int idClientes;
+    
 }

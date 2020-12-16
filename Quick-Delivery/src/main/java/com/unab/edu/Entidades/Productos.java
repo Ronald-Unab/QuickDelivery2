@@ -11,4 +11,8 @@ package com.unab.edu.Entidades;
  */
 public class Productos {
     
+    protected int idProducto;
+    protected String nombre;
+    protected double precioP;
+    
 }

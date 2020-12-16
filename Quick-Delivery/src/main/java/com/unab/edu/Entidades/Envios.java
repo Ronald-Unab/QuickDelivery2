@@ -11,4 +11,8 @@ package com.unab.edu.Entidades;
  */
 public class Envios {
     
+    protected int idEnvio;
+    protected int idVenta;
+    protected int idCliente;
+    
 }
