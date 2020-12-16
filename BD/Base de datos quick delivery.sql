@@ -18,6 +18,8 @@ Create Table Productos
 idProducto int primary key auto_increment not null,
 nombreP varchar (50) not null,
 cantidadProducto int,
+descripcionP varchar(500),
+categoria varchar(50),
 precioP decimal not null
 );
 
