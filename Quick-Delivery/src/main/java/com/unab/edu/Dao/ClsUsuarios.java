@@ -5,7 +5,6 @@
  */
 package com.unab.edu.Dao;
 
-
 import com.unab.edu.Entidades.Usuarios;
 import com.unab.edu.quick.delivery.conexion.conexion;
 import java.sql.CallableStatement;
@@ -14,13 +13,12 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-
 /**
  *
  * @author PC
  */
-
 public class ClsUsuarios {
+
     conexion conectarclase = new conexion();
     Connection conectar = conectarclase.retornarConexion();
 
@@ -77,5 +75,22 @@ public class ClsUsuarios {
         }
         return false;
     }
-    
+
+    public void RegistarUsuarios(Usuarios Usu) {
+        try {
+            CallableStatement Statement = conectar.prepareCall(" call sp_crearUsuario(?,?,?,?,?,?)");
+            Statement.setString("CnombreUsuario", Usu.getNombreU());
+            Statement.setString("CapellidoUsuario", Usu.getApellidoU());
+            Statement.setString("CcorreoUsuario", Usu.getCorreoU());
+            Statement.setString("CcontraUsuario", Usu.getContraU());
+            Statement.setString("CtelefonoUsuario", Usu.getTelefonoU());
+            Statement.setString("CdireccionUsuario", Usu.getDireccionU());
+            Statement.executeQuery();
+            JOptionPane.showMessageDialog(null, "Usuario Registrado");
+            conectar.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
 }
