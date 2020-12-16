@@ -5,6 +5,9 @@
  */
 package com.unab.edu.Frm;
 
+import com.unab.edu.Dao.ClsUsuarios;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author orell
@@ -52,6 +55,11 @@ public class FrmLoguin extends javax.swing.JFrame {
 
         btnIngresar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnIngresar.setText("INGRESAR");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
 
         jlRegistro.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jlRegistro.setForeground(new java.awt.Color(255, 255, 0));
@@ -118,12 +126,35 @@ public class FrmLoguin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jlRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlRegistroMouseClicked
-         FrmRegistro registro=new FrmRegistro();
-         registro.setVisible(true); 
-         this.dispose();
-         
-         
+        FrmRegistro registro = new FrmRegistro();
+        registro.setVisible(true);
+        this.dispose();
+
+
     }//GEN-LAST:event_jlRegistroMouseClicked
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        String user = txtCorreo.getText();
+        String pass = String.valueOf(jpContra.getText());
+
+        if (!user.isEmpty() && !pass.isEmpty()) {
+
+            ClsUsuarios est = new ClsUsuarios();
+            var variablecontenedoraconsultaBd = est.LoguinUsuarios(user, pass);
+
+            if (variablecontenedoraconsultaBd == true) {
+                JOptionPane.showMessageDialog(null, "WELCOME");
+                FrmMenu MenuPrin = new FrmMenu();
+                MenuPrin.setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "STOP");
+
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Llena los Datos");
+        }
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
      * @param args the command line arguments
