@@ -51,6 +51,8 @@ public class JPanelPublicarProd extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("Id ");
 
+        txtId.setEnabled(false);
+
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("Nombre del Producto ");
 
