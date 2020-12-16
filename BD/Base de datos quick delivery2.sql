@@ -8,7 +8,7 @@ idUsuario int primary key auto_increment not null,
 nombreU varchar(50) not null,
 apellidoU varchar(50) not null,
 correoU Varchar(50) not null,
-contraU Varchar(50),
+contraU Varchar(600) not null,
 telefonoU Varchar(10) not null,
 direccionU Varchar(500) not null
 );
@@ -17,9 +17,9 @@ Create Table Productos
 (
 idProducto int primary key auto_increment not null,
 nombreP varchar (50) not null,
-cantidadProducto int,
-descripcionP varchar(500),
-categoria varchar(50),
+cantidadProducto int not null,
+descripcionP varchar(500) not null,
+categoria varchar(50) not null,
 precioP decimal not null
 );
 
@@ -35,8 +35,8 @@ Create Table Ventas
 idVenta int primary key auto_increment not null,
 idVendedor int not null,
 idProducto int not null,
-totalV decimal,
-comisionEnvio decimal,
+totalV decimal not null,
+comisionEnvio decimal not null,
 fechaVenta Date not null,
 foreign key (idVendedor) references Vendedores(idVendedor),
 foreign key (idProducto) references Productos(idProducto)
@@ -80,4 +80,7 @@ foreign key (idVenta) references Ventas (idVenta)
 );
 -- si sale un error, descomentar lo siguiente y ejecutarlo
 -- alter table Clientes Add foreign key (idCompra) references Compras (idCompra)
+
+
+
 
