@@ -5,14 +5,19 @@
  */
 package com.unab.edu.Entidades;
 
+import lombok.Data;
+
 /**
  *
  * @author PC
  */
+@Data
 public class Productos {
-    
+
     protected int idProducto;
     protected String nombre;
     protected double precioP;
-    
+    protected String categoria;
+    protected int cantidad;
+    protected String descripcion;
 }
