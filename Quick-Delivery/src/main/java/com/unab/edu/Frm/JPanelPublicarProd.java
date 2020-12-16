@@ -96,7 +96,7 @@ public class JPanelPublicarProd extends javax.swing.JPanel {
                             .addComponent(txtPrecioProd)
                             .addComponent(cmbCategoria, 0, 171, Short.MAX_VALUE)
                             .addComponent(txtDescripcion))))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(190, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,7 +126,7 @@ public class JPanelPublicarProd extends javax.swing.JPanel {
                     .addComponent(btnGuardar)
                     .addComponent(btnActualizar)
                     .addComponent(btnEliminar))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
