@@ -21,7 +21,7 @@ public class conexion {
         try
         {
             
-            conexion = DriverManager.getConnection("jdbc:mysql://localhost/QuickDeliveryBD","root","root");
+            conexion = DriverManager.getConnection("jdbc:mysql://localhost/quickdeliverybd","root","root");
             
             System.out.println("Conectado a la BD");
         
