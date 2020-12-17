@@ -37,6 +37,23 @@ public class ClsProductos {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    
+        public void ActualizarProductos(Productos Prod) {
+        try {
+            CallableStatement Statement = conectar.prepareCall(" call SP_U_Producto(?,?,?,?,?,?)");
+            Statement.setInt("PidProducto", Prod.getIdProducto());
+            Statement.setString("PnombreP", Prod.getNombre());
+            Statement.setInt("PcantidadProducto", Prod.getCantidad());
+            Statement.setString("PdescripcionP", Prod.getDescripcion());
+            Statement.setString("Pcategoria", Prod.getCategoria());
+            Statement.setDouble("Pprecio", Prod.getPrecioP());
+            Statement.execute();
+            conectar.close();
+            JOptionPane.showMessageDialog(null, "PRODUCTO ACTUALIZADO");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
 
 //    public void BorrarPersonas(Persona Per) {
 //        try {
@@ -50,21 +67,7 @@ public class ClsProductos {
 //        }
 //    }
 //
-//    public void ActualizarPersona(Persona Per) {
-//        try {
-//            CallableStatement Statement = conectar.prepareCall(" call SP_U_Persona(?,?,?,?,?)");
-//            Statement.setInt("PIdPersona", Per.getIdPersona());
-//            Statement.setString("PNombre", Per.getNombre());
-//            Statement.setString("PApellido", Per.getApellido());
-//            Statement.setInt("PEdad", Per.getEdad());
-//            Statement.setString("PSexo", Per.getSexo());
-//            Statement.execute();
-//            conectar.close();
-//            JOptionPane.showMessageDialog(null, "PERSONA ACTUALIZADA");
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, e);
-//        }
-//    }
+
     
     public ArrayList<Productos> MostrarProductos() {
         ArrayList<Productos> Productos = new ArrayList<>();

@@ -81,7 +81,7 @@ public class FrmMenu extends javax.swing.JFrame {
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,7 +101,7 @@ public class FrmMenu extends javax.swing.JFrame {
 
         JpPrint.setBackground(new java.awt.Color(0, 102, 102));
         JpPrint.setLayout(new javax.swing.BoxLayout(JpPrint, javax.swing.BoxLayout.LINE_AXIS));
-        getContentPane().add(JpPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 650, 600));
+        getContentPane().add(JpPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 850, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
