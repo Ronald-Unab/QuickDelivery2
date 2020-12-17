@@ -94,14 +94,14 @@ public class FrmMenu extends javax.swing.JFrame {
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 590));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 620));
 
         JpPrint.setBackground(new java.awt.Color(0, 102, 102));
         JpPrint.setLayout(new javax.swing.BoxLayout(JpPrint, javax.swing.BoxLayout.LINE_AXIS));
-        getContentPane().add(JpPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 850, 600));
+        getContentPane().add(JpPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 930, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

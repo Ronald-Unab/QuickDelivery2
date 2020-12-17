@@ -7,6 +7,7 @@ package com.unab.edu.Frm;
 
 import com.unab.edu.Dao.ClsProductos;
 import com.unab.edu.Entidades.Productos;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,6 +20,22 @@ public class JPanelPublicarProd extends javax.swing.JPanel {
      */
     public JPanelPublicarProd() {
         initComponents();
+        String Titulos[] = {"NOMBRE", "PRECIOP", "CATEGORIA", "CANTIDAD", "DESCRIPCION"};
+        DefaultTableModel df = new DefaultTableModel(null, Titulos);
+        ClsProductos ClsProd = new ClsProductos();
+        var MostrarProductos = ClsProd.MostrarProductos();
+        String filas[] = new String[5];
+
+        for (var iterar : MostrarProductos) {
+            filas[0] = iterar.getNombre();
+            filas[1] = String.valueOf((iterar.getPrecioP()));
+            filas[2] = String.valueOf(iterar.getCategoria());
+            filas[3] = String.valueOf((iterar.getCantidad()));
+            filas[4] = String.valueOf((iterar.getDescripcion()));
+            
+            df.addRow(filas);
+        }
+        JTProductos.setModel(df);
 
     }
 
@@ -118,7 +135,7 @@ public class JPanelPublicarProd extends javax.swing.JPanel {
                         .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(80, 80, 80)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addContainerGap(440, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -135,8 +152,8 @@ public class JPanelPublicarProd extends javax.swing.JPanel {
                             .addComponent(cmbCategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
                             .addComponent(txtCantidad))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(67, 67, 67)
+                        .addComponent(jScrollPane1))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,13 +184,13 @@ public class JPanelPublicarProd extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblDescripcion)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
                     .addComponent(btnActualizar)
                     .addComponent(btnEliminar))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 public void limpiar() {
