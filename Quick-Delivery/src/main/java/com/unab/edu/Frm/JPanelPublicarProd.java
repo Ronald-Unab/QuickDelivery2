@@ -19,8 +19,7 @@ public class JPanelPublicarProd extends javax.swing.JPanel {
      */
     public JPanelPublicarProd() {
         initComponents();
-        
-        
+
     }
 
     /**
@@ -177,6 +176,12 @@ public class JPanelPublicarProd extends javax.swing.JPanel {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+public void limpiar() {
+        txtNomProducto.setText("");
+        txtPrecioProd.setText("");
+        txtCantidad.setText("");
+        txtDescripcion.setText("");
+    }
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         Productos prod = new Productos();
@@ -187,6 +192,7 @@ public class JPanelPublicarProd extends javax.swing.JPanel {
         prod.setDescripcion(txtDescripcion.getText());
         prod.setPrecioP(Double.parseDouble(txtPrecioProd.getText()));
         clsprod.AgregarProductos(prod);
+        limpiar();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
