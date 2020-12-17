@@ -7,7 +7,6 @@ package com.unab.edu.Frm;
 
 import com.unab.edu.Dao.ClsProductos;
 import com.unab.edu.Entidades.Productos;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,22 +19,6 @@ public class JPanelPublicarProd extends javax.swing.JPanel {
      */
     public JPanelPublicarProd() {
         initComponents();
-        String Titulos[] = {"NOMBRE", "PRECIOP", "CATEGORIA", "CANTIDAD", "DESCRIPCION"};
-        DefaultTableModel df = new DefaultTableModel(null, Titulos);
-        ClsProductos ClsProd = new ClsProductos();
-        var MostrarProductos = ClsProd.MostrarProductos();
-        String filas[] = new String[5];
-
-        for (var iterar : MostrarProductos) {
-            filas[0] = iterar.getNombre();
-            filas[1] = String.valueOf((iterar.getPrecioP()));
-            filas[2] = String.valueOf(iterar.getCategoria());
-            filas[3] = String.valueOf((iterar.getCantidad()));
-            filas[4] = String.valueOf((iterar.getDescripcion()));
-            
-            df.addRow(filas);
-        }
-        JTProductos.setModel(df);
         
         
     }
