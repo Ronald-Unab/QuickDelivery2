@@ -9,6 +9,8 @@ import com.unab.edu.Entidades.Productos;
 import com.unab.edu.quick.delivery.conexion.conexion;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -63,4 +65,28 @@ public class ClsProductos {
 //            JOptionPane.showMessageDialog(null, e);
 //        }
 //    }
+    
+    public ArrayList<Productos> MostrarProductos() {
+        ArrayList<Productos> Productos = new ArrayList<>();
+        try {
+            CallableStatement Statement = conectar.prepareCall("call SP_SProducto()");
+            ResultSet resultadoDeConsulta = Statement.executeQuery();
+
+            while (resultadoDeConsulta.next()) {
+                Productos prod = new Productos();
+                prod.setIdProducto(resultadoDeConsulta.getInt("idProducto"));
+                prod.setNombre(resultadoDeConsulta.getString("nombreP"));
+                prod.setCantidad(resultadoDeConsulta.getInt("cantidadProducto"));
+                prod.setDescripcion(resultadoDeConsulta.getNString("descripcionP"));
+                prod.setCategoria(resultadoDeConsulta.getNString("categoria"));
+                prod.setPrecioP(resultadoDeConsulta.getDouble("precioP"));
+
+                Productos.add(prod);
+            }
+            conectar.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return Productos;
+    }
 }
